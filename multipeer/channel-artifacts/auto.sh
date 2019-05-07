@@ -10,10 +10,9 @@ export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/orde
 while :; do 
     for ((i=1; i<=100; i++)); do
         ((Num=$i %2))
-        if ["$Num" == 0]; then
+        if [ $Num -ne 0]; then
 			peer chaincode invoke --tls --cafile ${ORDERER_CA} -C mychannel -n mycc -c '{"Args":["invoke","b","a","20"]}'
-		fi
-        if ["$Num" != 0]; then
+		else
 			peer chaincode invoke --tls --cafile ${ORDERER_CA} -C mychannel -n mycc -c '{"Args":["invoke","a","b","20"]}'
 		fi
     done
