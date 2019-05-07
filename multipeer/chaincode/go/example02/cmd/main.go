@@ -10,7 +10,7 @@ import (
 	"fmt"
 
 	"github.com/hyperledger/fabric/core/chaincode/shim"
-	"github.com/hyperledger/fabric/examples/chaincode/go/example02"
+	"github.com/hyperledger/fabric/multipeer/chaincode/go/example02"
 )
 
 func main() {
