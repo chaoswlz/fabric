@@ -7,7 +7,7 @@
 
 export ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
 
-while ; do 
+while :; do 
     for ((i=1; i<=100; i++)); do
         ((Num=$i %2))
         if ["$Num" == 0]; then
